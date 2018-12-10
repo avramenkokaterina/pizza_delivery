@@ -3,15 +3,18 @@ package sample.model;
 public class Courier {
     private int idCourier;
     private String nameCourier;
-    private String nameSurname;
+    private String surnameCourier;
     private String login;
     private String password;
 
+    public Courier(){
 
-    public Courier(int idCourier, String nameCourier, String nameSurname, String login, String password) {
+    }
+
+    public Courier(int idCourier, String nameCourier, String surnameCourier, String login, String password) {
         this.idCourier = idCourier;
         this.nameCourier = nameCourier;
-        this.nameSurname = nameSurname;
+        this.surnameCourier = surnameCourier;
         this.login = login;
         this.password = password;
     }
@@ -32,12 +35,12 @@ public class Courier {
         this.nameCourier = nameCourier;
     }
 
-    public String getNameSurname() {
-        return nameSurname;
+    public String getSurnameCourier() {
+        return surnameCourier;
     }
 
-    public void setNameSurname(String nameSurname) {
-        this.nameSurname = nameSurname;
+    public void setSurnameCourier(String nameSurname) {
+        this.surnameCourier = nameSurname;
     }
 
     public String getLogin() {
@@ -54,5 +57,10 @@ public class Courier {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString(){
+        return idCourier + nameCourier + surnameCourier + login + password;
     }
 }

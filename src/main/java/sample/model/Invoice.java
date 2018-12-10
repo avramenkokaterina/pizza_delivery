@@ -9,6 +9,7 @@ public class Invoice {
     private String arrivingTime;
     private String status;
 
+    public Invoice(){}
 
     public Invoice(int idInvoice, int idPayment, int idCustomer, int idCourier, String purchaseTime, String arrivingTime, String status) {
         this.idInvoice = idInvoice;

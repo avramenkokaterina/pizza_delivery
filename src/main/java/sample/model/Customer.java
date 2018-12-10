@@ -10,6 +10,9 @@ public class Customer {
     private String telephone;
     private String email;
 
+    public Customer(){
+
+    }
 
     public Customer(int idCustomer, String customerName, String customerSurname, String city, String street, int building, String telephone, String email) {
         this.idCustomer = idCustomer;

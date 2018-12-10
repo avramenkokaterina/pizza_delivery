@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.controller.dbworker.DBWorker;
+import sample.model.dbworker.DBWorker;
 
 public class Main extends Application {
 
@@ -19,8 +19,9 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        DBWorker dbWorker = new DBWorker();
+        //DBWorker dbWorker = new DBWorker();
         System.out.println("vs'o ok");
+
         //launch(args);
     }
 }

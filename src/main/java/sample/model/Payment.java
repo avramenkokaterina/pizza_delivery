@@ -6,6 +6,7 @@ public class Payment {
     private int totalPrice;
     private String paymentTime;
 
+    public Payment(){}
 
     public Payment(int idPayment, int idType, int totalPrice, String paymentTime) {
         this.idPayment = idPayment;

@@ -6,6 +6,7 @@ public class Unit {
     private int weigth;
     private int price;
 
+    public Unit(){}
 
     public Unit(int idUnit, String unitName, int weigth, int price) {
         this.idUnit = idUnit;

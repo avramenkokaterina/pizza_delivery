@@ -4,6 +4,7 @@ public class PaymentType {
     private int idType;
     private String paymentTypeName;
 
+    public PaymentType(){}
 
     public PaymentType(int idType, String paymentTypeName) {
         this.idType = idType;

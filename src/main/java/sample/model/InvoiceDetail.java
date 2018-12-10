@@ -6,6 +6,7 @@ public class InvoiceDetail {
     private int quantity;
     private int idUnit;
 
+    public InvoiceDetail(){}
 
     public InvoiceDetail(int idInvoice, int idPizza, int quantity, int idUnit) {
         this.idInvoice = idInvoice;

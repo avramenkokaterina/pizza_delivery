@@ -5,6 +5,8 @@ public class Pizza {
     private String pizzaName;
     private int price;
 
+    public Pizza(){}
+
     public Pizza(int idPizza, String pizzaName, int price) {
         this.idPizza = idPizza;
         this.pizzaName = pizzaName;

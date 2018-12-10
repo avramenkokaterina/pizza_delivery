@@ -1,4 +1,4 @@
-package sample.controller.dbworker;
+package sample.model.dbworker;
 
 import java.sql.*;
 import java.util.Locale;
@@ -29,6 +29,11 @@ public class DBWorker {
         } catch (SQLException ex){
             ex.printStackTrace();
         }
+
+
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
 }

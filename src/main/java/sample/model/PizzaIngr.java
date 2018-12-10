@@ -5,6 +5,7 @@ public class PizzaIngr {
     private int idIngr;
     private int quantity;
 
+    public PizzaIngr(){}
 
     public PizzaIngr(int idPizza, int idIngr, int quantity) {
         this.idPizza = idPizza;
