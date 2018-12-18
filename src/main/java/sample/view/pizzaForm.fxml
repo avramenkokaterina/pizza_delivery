@@ -46,17 +46,17 @@
               </Button>
             <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="129.0" layoutY="6.0">
                <image>
-                  <Image url="@../../../../sources/documentc.png" />
+                  <Image url="@../../../../../sources/documentc.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="11.0" layoutY="6.0">
                <image>
-                  <Image url="@../../../../sources/dollc.png" />
+                  <Image url="@../../../../../sources/dollc.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="316.0" layoutY="6.0">
                <image>
-                  <Image url="@../../../../sources/conversationc.png" />
+                  <Image url="@../../../../../sources/conversationc.png" />
                </image>
             </ImageView>
             <Circle fill="WHITE" layoutX="661.0" layoutY="32.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
@@ -90,7 +90,7 @@
       </Button>
       <ImageView fitHeight="24.0" fitWidth="21.0" layoutX="36.0" layoutY="87.0">
          <image>
-            <Image url="@../../../../sources/crown.png" />
+            <Image url="@../../../../../sources/crown.png" />
          </image>
       </ImageView>
       <Button fx:id="allPizzasBttn" alignment="CENTER" contentDisplay="RIGHT" layoutX="205.0" layoutY="80.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="148.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="All Pizzas" textAlignment="RIGHT" textFill="WHITE">
@@ -109,7 +109,7 @@
                      <children>
                         <ImageView fx:id="image1" fitHeight="180.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr1" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -142,7 +142,7 @@
                      <children>
                         <ImageView fx:id="image2" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr2" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -175,7 +175,7 @@
                      <children>
                         <ImageView fx:id="image3" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr3" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -208,7 +208,7 @@
                      <children>
                         <ImageView fx:id="image6" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr6" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -241,7 +241,7 @@
                      <children>
                         <ImageView fx:id="image5" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr5" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -274,7 +274,7 @@
                      <children>
                         <ImageView fx:id="image4" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr4" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -307,7 +307,7 @@
                      <children>
                         <ImageView fx:id="image7" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr7" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -340,7 +340,7 @@
                      <children>
                         <ImageView fx:id="image9" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr9" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -373,7 +373,7 @@
                      <children>
                         <ImageView fx:id="image8" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr8" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -406,7 +406,7 @@
                      <children>
                         <ImageView fx:id="image10" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr10" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -439,7 +439,7 @@
                      <children>
                         <ImageView fx:id="image12" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr12" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -472,7 +472,7 @@
                      <children>
                         <ImageView fx:id="image11" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr11" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -505,7 +505,7 @@
                      <children>
                         <ImageView fx:id="image14" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr14" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -538,7 +538,7 @@
                      <children>
                         <ImageView fx:id="image15" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr15" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -571,7 +571,7 @@
                      <children>
                         <ImageView fx:id="image13" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr13" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -604,7 +604,7 @@
                      <children>
                         <ImageView fx:id="image18" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr18" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -637,7 +637,7 @@
                      <children>
                         <ImageView fx:id="image16" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr16" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -670,7 +670,7 @@
                      <children>
                         <ImageView fx:id="image17" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr17" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -703,7 +703,7 @@
                      <children>
                         <ImageView fx:id="image21" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr21" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -736,7 +736,7 @@
                      <children>
                         <ImageView fx:id="image19" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr19" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -769,7 +769,7 @@
                      <children>
                         <ImageView fx:id="image20" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr20" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
@@ -802,7 +802,7 @@
                      <children>
                         <ImageView fx:id="image22" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../sources/pizza1.png" />
+                              <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="descr22" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">

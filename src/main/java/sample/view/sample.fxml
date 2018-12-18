@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
+   <children>
+      <ImageView>
+         <image>
+            <Image url="@../../../../../sources/background1.png" />
+         </image>
+      </ImageView>
+      <AnchorPane opacity="0.72" prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button fx:id="logInButton" layoutX="924.0" layoutY="15.0" mnemonicParsing="false" onAction="#loginButtonAction" onMouseEntered="#loginMouseOn" onMouseExited="#loginMouseOut" style="-fx-background-color: transparent;" text="Log in" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" onAction="#creatorClick" onMouseEntered="#creatorMouseOn" onMouseExited="#creatorMouseOut" style="-fx-background-color: transparent;" text="Creator" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" onAction="#docClick" onMouseEntered="#documentationMouseOn" onMouseExited="#documentationMouseOut" style="-fx-background-color: transparent;" text="Documentation" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" onAction="#helpClick" onMouseEntered="#helpMouseOn" onMouseExited="#helpMouseOut" style="-fx-background-color: transparent;" text="Help" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="helpPic" fitHeight="50.0" fitWidth="50.0" layoutX="316.0" layoutY="6.0" onMouseEntered="#helpPicMouseOn" onMouseExited="#helpPicMouseOut">
+               <image>
+                  <Image url="@../../../../../sources/conversationw.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="creatorPic" fitHeight="50.0" fitWidth="50.0" layoutX="11.0" layoutY="6.0" onMouseEntered="#creatorPicMouseOn" onMouseExited="#creatorPicMouseOut">
+               <image>
+                  <Image url="@../../../../../sources/dollw.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="docPic" fitHeight="50.0" fitWidth="50.0" layoutX="129.0" layoutY="6.0" onMouseEntered="#docPicMouseOn" onMouseExited="#docPicMouseOut">
+               <image>
+                  <Image url="@../../../../../sources/documentw.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="orderButton" alignment="CENTER" layoutX="350.0" layoutY="243.0" mnemonicParsing="false" onAction="#orderButtonAction" onMouseEntered="#orderMouseOn" onMouseExited="#orderMouseOut" prefHeight="65.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Замовити" textFill="#ce343e">
+         <font>
+            <Font name="Century Gothic" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="exitBttn" layoutX="410.0" layoutY="463.0" mnemonicParsing="false" onAction="#closeButtonAction" style="-fx-background-color: transparent;" text="Завершити роботу" textFill="WHITE" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
