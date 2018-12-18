@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerCourierReportForm">
+    <children>
+        <AnchorPane prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;">
+            <children>
+                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log out">
+                    <font>
+                        <Font name="Century Gothic" size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Creator">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Documentation">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Help">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="129.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/documentc.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="11.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/dollc.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="316.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/conversationc.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="name" alignment="CENTER" layoutX="729.0" layoutY="15.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #ce343e; -fx-background-radius: 5;" text="Name Surname" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Century Gothic Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="table" layoutX="50.0" layoutY="278.0" prefHeight="160.0" prefWidth="404.0">
+            <columns>
+                <TableColumn prefWidth="124.66668701171875" text="pizza_name" />
+                <TableColumn prefWidth="103.0" text="purchase_time" />
+                <TableColumn prefWidth="95.66668701171875" text="price" />
+                <TableColumn prefWidth="79.0" text="size" />
+            </columns>
+        </TableView>
+        <Button fx:id="showReportBttn" alignment="CENTER" layoutX="381.0" layoutY="453.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="247.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Повернутись" textFill="WHITE">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="Century Gothic Bold" size="16.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="144.0" fitWidth="900.0" layoutX="50.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../sources/Screenshot_3.png" />
+            </image>
+        </ImageView>
+      <Label fx:id="name1" alignment="CENTER" layoutX="172.0" layoutY="233.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #4497db; -fx-background-radius: 5;" text="Звіт по піцам" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table1" layoutX="469.0" layoutY="278.0" prefHeight="160.0" prefWidth="265.0">
+         <columns>
+            <TableColumn prefWidth="65.33331298828125" text="id_courier" />
+            <TableColumn prefWidth="134.0" text="name" />
+            <TableColumn prefWidth="64.3333740234375" text="better" />
+         </columns>
+      </TableView>
+      <Label fx:id="name11" alignment="CENTER" layoutX="527.0" layoutY="233.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #4497db; -fx-background-radius: 5;" text="Звіт по кур'єрам" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table11" layoutX="749.0" layoutY="278.0" prefHeight="160.0" prefWidth="201.0">
+         <columns>
+            <TableColumn prefWidth="132.66668701171875" text="name" />
+            <TableColumn prefWidth="67.0" text="total_sum" />
+         </columns>
+      </TableView>
+      <Label fx:id="name111" alignment="CENTER" layoutX="771.0" layoutY="233.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #4497db; -fx-background-radius: 5;" text="Звіт по кур'єрам" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

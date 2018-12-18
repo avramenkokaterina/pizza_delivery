@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerCourierEditForm">
+    <children>
+        <AnchorPane prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;">
+            <children>
+                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log out">
+                    <font>
+                        <Font name="Century Gothic" size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Creator">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Documentation">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Help">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="129.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/documentc.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="11.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/dollc.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="316.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/conversationc.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="name" alignment="CENTER" layoutX="729.0" layoutY="15.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #ce343e; -fx-background-radius: 5;" text="Name Surname" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Century Gothic Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Button fx:id="showReportBttn" alignment="CENTER" layoutX="381.0" layoutY="453.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="247.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Повернутись" textFill="WHITE">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="Century Gothic Bold" size="16.0" />
+            </font>
+        </Button>
+      <TabPane layoutX="50.0" layoutY="90.0" prefHeight="333.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Клієнти">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #e5e5e5;">
+                     <children>
+                        <TableView layoutX="460.0" layoutY="30.0" prefHeight="236.0" prefWidth="400.0">
+                          <columns>
+                            <TableColumn prefWidth="53.6666259765625" text="id" />
+                            <TableColumn prefWidth="89.66668701171875" text="name" />
+                              <TableColumn prefWidth="100.33331298828125" text="surname" />
+                              <TableColumn prefWidth="83.0" text="telephone" />
+                              <TableColumn prefWidth="72.0" text="email" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="logInButton1" layoutX="165.0" layoutY="115.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Оновити" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="113.0" layoutY="28.0" text="ID">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox layoutX="139.0" layoutY="24.0" prefHeight="28.0" prefWidth="180.0" />
+                        <TextField layoutX="139.0" layoutY="64.0">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="20.0" layoutY="68.0" text="New telephone ">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="logInButton11" layoutX="165.0" layoutY="228.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Видалити" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="113.0" layoutY="192.0" text="ID">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox layoutX="139.0" layoutY="188.0" prefHeight="28.0" prefWidth="180.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Замовлення">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #e5e5e5;">
+                     <children>
+                        <ComboBox layoutX="139.0" layoutY="188.0" prefHeight="28.0" prefWidth="180.0" />
+                        <Label layoutX="113.0" layoutY="192.0" text="ID">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="logInButton111" layoutX="165.0" layoutY="228.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Видалити" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="56.0" layoutY="68.0" text="New date">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="139.0" layoutY="64.0">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox layoutX="139.0" layoutY="24.0" prefHeight="28.0" prefWidth="180.0" />
+                        <Label layoutX="113.0" layoutY="28.0" text="ID">
+                           <font>
+                              <Font name="Century Gothic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="logInButton12" layoutX="165.0" layoutY="115.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Оновити" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <TableView layoutX="460.0" layoutY="30.0" prefHeight="236.0" prefWidth="400.0">
+                           <columns>
+                              <TableColumn prefWidth="53.6666259765625" text="id" />
+                              <TableColumn prefWidth="76.6666259765625" text="id_payment" />
+                              <TableColumn prefWidth="114.3333740234375" text="id_invoice_detail" />
+                              <TableColumn prefWidth="83.0" text="arriving_time" />
+                              <TableColumn prefWidth="72.0" text="status" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+    </children>
+</AnchorPane>

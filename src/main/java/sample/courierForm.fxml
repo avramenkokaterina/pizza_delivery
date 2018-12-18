@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerCourierForm">
+    <children>
+        <AnchorPane prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;">
+            <children>
+                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log out">
+                    <font>
+                        <Font name="Century Gothic" size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Creator">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Documentation">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Help">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="129.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/documentc.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="11.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/dollc.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="316.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/conversationc.png" />
+                    </image>
+                </ImageView>
+            <Label fx:id="name" alignment="CENTER" layoutX="729.0" layoutY="15.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #ce343e; -fx-background-radius: 5;" text="Name Surname" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="18.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+        <Button fx:id="editBttn" alignment="CENTER" layoutX="184.0" layoutY="236.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="247.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Редагувати дані" textFill="WHITE">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="Century Gothic Bold" size="16.0" />
+            </font>
+        </Button>
+      <TableView fx:id="table" layoutX="50.0" layoutY="292.0" prefHeight="179.0" prefWidth="900.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="id_invoice" />
+          <TableColumn prefWidth="75.0" text="id_payment" />
+            <TableColumn prefWidth="127.0" text="payment_type_name" />
+            <TableColumn prefWidth="124.66668701171875" text="pizza_name" />
+            <TableColumn prefWidth="82.0" text="quantity" />
+            <TableColumn prefWidth="87.00003051757812" text="id_customer" />
+            <TableColumn prefWidth="51.0" text="courier" />
+            <TableColumn prefWidth="103.0" text="purchase_time" />
+            <TableColumn prefWidth="95.66668701171875" text="arriving_time" />
+            <TableColumn prefWidth="77.0" text="status" />
+        </columns>
+      </TableView>
+      <Button fx:id="showReportBttn" alignment="CENTER" layoutX="569.0" layoutY="236.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="247.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Показати звіти" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="144.0" fitWidth="900.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../sources/Screenshot_3.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

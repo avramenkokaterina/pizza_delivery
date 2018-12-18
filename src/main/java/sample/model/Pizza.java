@@ -1,13 +1,16 @@
 package sample.model;
 
+import javafx.scene.image.Image;
+
 public class Pizza {
     private int idPizza;
     private String pizzaName;
     private int price;
+    private Image image;
 
     public Pizza(){}
 
-    public Pizza(int idPizza, String pizzaName, int price) {
+    public Pizza(int idPizza, String pizzaName, int price, Image image) {
         this.idPizza = idPizza;
         this.pizzaName = pizzaName;
         this.price = price;

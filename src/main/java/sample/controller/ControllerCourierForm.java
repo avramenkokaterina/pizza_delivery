@@ -2,22 +2,25 @@ package sample.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 
-
-public class Controller {
+public class ControllerCourierForm {
 
     @FXML
     private Button docButtonText;
 
     @FXML
+    private Button editBttn;
+
+    @FXML
     private Button creatorButtonText;
 
     @FXML
-    private ImageView docButtonPic;
+    private Button showReportBttn;
 
     @FXML
-    private ImageView helpButtonPic;
+    private Label name;
 
     @FXML
     private Button helpButtonText;
@@ -26,10 +29,6 @@ public class Controller {
     private Button logInButton;
 
     @FXML
-    private Button orderButton;
-
-    @FXML
-    private ImageView creatorButtonPic;
-
+    private TableView<?> table;
 
 }

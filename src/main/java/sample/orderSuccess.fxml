@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerOrderSuccess">
+    <children>
+        <AnchorPane prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;">
+            <children>
+                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log in">
+                    <font>
+                        <Font name="Century Gothic" size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Creator">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Documentation">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Help">
+                    <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="129.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/documentc.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="11.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/dollc.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="316.0" layoutY="6.0">
+                    <image>
+                        <Image url="@../../../../sources/conversationc.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <Button fx:id="backToMainBttn" alignment="CENTER" layoutX="321.0" layoutY="395.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="334.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Повернутись на головну" textFill="WHITE">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="Century Gothic Bold" size="23.0" />
+            </font>
+        </Button>
+      <Label layoutX="220.0" layoutY="249.0" text="Дякуємо за Ваше замовлення!">
+         <font>
+            <Font name="Century Gothic Bold" size="35.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="144.0" fitWidth="900.0" layoutX="50.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../sources/Screenshot_3.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="50.0" layoutY="319.0" prefHeight="34.0" prefWidth="176.0" style="-fx-background-color: #ce343e;">
+         <children>
+            <Label layoutX="9.0" layoutY="6.0" text="1. Order in progress" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="231.0" layoutY="319.0" prefHeight="34.0" prefWidth="176.0" style="-fx-background-color: #4497db;">
+         <children>
+            <Label layoutX="42.0" layoutY="6.0" text="2. Makeline" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="412.0" layoutY="319.0" prefHeight="34.0" prefWidth="176.0" style="-fx-background-color: #4497db;">
+         <children>
+            <Label layoutX="46.0" layoutY="6.0" text="3. In oven" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="593.0" layoutY="319.0" prefHeight="34.0" prefWidth="176.0" style="-fx-background-color: #4497db;">
+         <children>
+            <Label layoutX="37.0" layoutY="6.0" text="4. In the box" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="774.0" layoutY="319.0" prefHeight="34.0" prefWidth="176.0" style="-fx-background-color: #4497db;">
+         <children>
+            <Label layoutX="33.0" layoutY="5.0" text="5. On the way" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>
