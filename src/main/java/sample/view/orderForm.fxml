@@ -14,7 +14,7 @@
     <children>
         <AnchorPane prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;">
             <children>
-                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log in">
+                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log in">
                     <font>
                         <Font name="Century Gothic" size="16.0" />
                     </font>
@@ -22,22 +22,22 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Creator">
+                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" onAction="#creatorClick" style="-fx-background-color: transparent;" text="Creator">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Documentation">
+                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" onAction="#docClick" style="-fx-background-color: transparent;" text="Documentation">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Help">
+                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" onAction="#helpClick" style="-fx-background-color: transparent;" text="Help">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
                 </Button>
-                <Button fx:id="orderButton" alignment="CENTER" layoutX="660.0" layoutY="11.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="233.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="                      Замовити" textFill="WHITE">
+                <Button fx:id="orderButton" alignment="CENTER" layoutX="660.0" layoutY="11.0" mnemonicParsing="false" onAction="#orderAction" prefHeight="39.0" prefWidth="233.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="                      Замовити" textFill="WHITE">
                     <font>
                         <Font name="Century Gothic Bold" size="18.0" />
                     </font>
@@ -74,7 +74,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Label>
-                <Label layoutX="651.0" layoutY="21.0" text="22">
+                <Label fx:id="numberlbl" layoutX="651.0" layoutY="21.0" text="22">
                     <font>
                         <Font name="Century Gothic" size="17.0" />
                     </font>
@@ -157,6 +157,14 @@
                   </Label>
                </children>
             </AnchorPane>
+            <Button fx:id="exitBttn" layoutX="172.0" layoutY="400.0" mnemonicParsing="false" onAction="#closeButtonAction" style="-fx-background-color: transparent;" text="Завершити роботу" textFill="#ce343e" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Label layoutX="87.0" layoutY="118.0" text="Вулиця">
@@ -257,7 +265,7 @@
          </font>
       </Label>
       <ComboBox fx:id="payment" editable="true" layoutX="157.0" layoutY="412.0" prefHeight="25.0" prefWidth="200.0" />
-      <Button fx:id="orderButton1" alignment="CENTER" layoutX="177.0" layoutY="453.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="135.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Замовити" textFill="WHITE">
+      <Button fx:id="orderButtonFinal" alignment="CENTER" layoutX="177.0" layoutY="453.0" mnemonicParsing="false" onAction="#OrderButtonFinalAction" prefHeight="33.0" prefWidth="135.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Замовити" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

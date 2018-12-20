@@ -14,6 +14,15 @@ public class Pizza {
         this.idPizza = idPizza;
         this.pizzaName = pizzaName;
         this.price = price;
+        this.image = image;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     public void setIdPizza(int idPizza) {

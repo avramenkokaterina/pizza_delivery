@@ -13,7 +13,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControllerOrderForm implements Initializable {
-
     @FXML
     private Button docButtonText;
 
@@ -31,6 +30,9 @@ public class ControllerOrderForm implements Initializable {
 
     @FXML
     private TextField building;
+
+    @FXML
+    private Label numberlbl;
 
     @FXML
     private TextField street;
@@ -75,10 +77,13 @@ public class ControllerOrderForm implements Initializable {
     private Label descr;
 
     @FXML
-    private Label size;
+    private ComboBox<?> size;
 
     @FXML
     private TextField name;
+
+    @FXML
+    private Button exitBttn;
 
     @FXML
     private TextField time;
@@ -87,15 +92,15 @@ public class ControllerOrderForm implements Initializable {
     private Label pizzaPrice;
 
     @FXML
-    private Button orderButton1;
+    private Button orderButtonFinal;
 
 
     @FXML
-    public void initialize (URL Location, ResourceBundle resourceBundle){
+    public void initialize(URL Location, ResourceBundle resourceBundle) {
         city.getItems().removeAll(city.getItems());
         //city.getItems().addAll("Київ", "Бровари");
         payment.getItems().removeAll(payment.getItems());
-       // payment.getItems().addAll("Готівкою кур'єру", "Картою кур'єру");
+        // payment.getItems().addAll("Готівкою кур'єру", "Картою кур'єру");
     }
 
 }

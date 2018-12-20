@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerPizzaForm">
     <children>
         <AnchorPane prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;">
             <children>
-                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log in">
+                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log in">
                     <font>
                         <Font name="Century Gothic" size="16.0" />
                     </font>
@@ -21,22 +21,31 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Creator">
+                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" onAction="#creatorClick" style="-fx-background-color: transparent;" text="Creator">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
-                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Documentation">
+                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" onAction="#docClick" style="-fx-background-color: transparent;" text="Documentation">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
-                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Help">
+                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" onAction="#helpClick" style="-fx-background-color: transparent;" text="Help">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
-              <Button fx:id="orderButton" alignment="CENTER" layoutX="660.0" layoutY="11.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="233.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="                      Замовити" textFill="WHITE">
+              <Button fx:id="orderButton" alignment="CENTER" layoutX="660.0" layoutY="11.0" mnemonicParsing="false" onAction="#orderAction" prefHeight="39.0" prefWidth="233.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="                      Замовити" textFill="WHITE">
                   <font>
                       <Font name="Century Gothic Bold" size="18.0" />
                   </font>
@@ -59,13 +68,12 @@
                   <Image url="@../../../../../sources/conversationc.png" />
                </image>
             </ImageView>
-            <Circle fill="WHITE" layoutX="661.0" layoutY="32.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
             <Label layoutX="760.0" layoutY="2.0" text="|" textFill="#be171b">
                <font>
                   <Font name="Century" size="44.0" />
                </font>
             </Label>
-            <Label fx:id="totalPricelbl" layoutX="686.0" layoutY="20.0" text="0.00 грн." textFill="WHITE">
+            <Label fx:id="totalPricelbl" layoutX="677.0" layoutY="20.0" text="000.00 грн." textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="18.0" />
                </font>
@@ -73,14 +81,17 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Label layoutX="651.0" layoutY="21.0" text="22">
+            <Button fx:id="deleteButton" layoutX="640.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteBttnAction" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-background-radius: 17; -fx-border-radius: 17;" text="x">
                <font>
-                  <Font name="Century Gothic" size="17.0" />
+                  <Font name="Century Gothic" size="16.0" />
                </font>
-            </Label>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
             </children>
         </AnchorPane>
-      <Button fx:id="pizzaTopBttn" alignment="CENTER" contentDisplay="RIGHT" layoutX="23.0" layoutY="80.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="148.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="     Pizzas Top" textAlignment="RIGHT" textFill="WHITE">
+      <Button fx:id="pizzaTopBttn" alignment="CENTER" contentDisplay="RIGHT" layoutX="23.0" layoutY="80.0" mnemonicParsing="false" onAction="#pizzaTopBttnAction" prefHeight="39.0" prefWidth="148.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="     Pizzas Top" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
@@ -93,7 +104,7 @@
             <Image url="@../../../../../sources/crown.png" />
          </image>
       </ImageView>
-      <Button fx:id="allPizzasBttn" alignment="CENTER" contentDisplay="RIGHT" layoutX="205.0" layoutY="80.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="148.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="All Pizzas" textAlignment="RIGHT" textFill="WHITE">
+      <Button fx:id="allPizzasBttn" alignment="CENTER" contentDisplay="RIGHT" layoutX="205.0" layoutY="80.0" mnemonicParsing="false" onAction="#allPizzasBttnAction" prefHeight="39.0" prefWidth="148.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="All Pizzas" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
@@ -101,18 +112,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ScrollPane layoutY="125.0" prefHeight="368.0" prefViewportHeight="375.0" prefViewportWidth="1000.0" prefWidth="1004.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;">
+      <ScrollPane layoutX="5.0" layoutY="125.0" prefHeight="340.0" prefViewportHeight="375.0" prefViewportWidth="1000.0" prefWidth="990.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;">
          <content>
-            <Pane layoutY="130.0" prefHeight="2775.0" prefWidth="1000.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;">
+            <Pane layoutY="130.0" prefHeight="2778.0" prefWidth="970.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;">
                <children>
-                  <AnchorPane layoutX="30.0" layoutY="10.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane1" layoutX="30.0" layoutY="10.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image1" fitHeight="180.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr1" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr1" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус буля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -128,7 +139,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addButton1" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addButton1" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addButton1Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <font>
                               <Font name="Century Gothic" size="13.0" />
                            </font>
@@ -138,14 +149,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="350.0" layoutY="10.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane2" layoutX="350.0" layoutY="10.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image2" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr2" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr2" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -161,7 +172,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn2" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn2" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn2Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <font>
                               <Font name="Century Gothic" size="13.0" />
                            </font>
@@ -171,14 +182,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="670.0" layoutY="10.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane3" layoutX="670.0" layoutY="10.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image3" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr3" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr3" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -194,7 +205,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn3" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn3" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn3Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <font>
                               <Font name="Century Gothic" size="13.0" />
                            </font>
@@ -204,7 +215,7 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="670.0" layoutY="357.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane6" layoutX="670.0" layoutY="357.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image6" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -227,7 +238,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn6" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn6" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn6Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -237,7 +248,7 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="350.0" layoutY="357.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane5" layoutX="350.0" layoutY="357.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image5" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -260,7 +271,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn5" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn5" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn5Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -270,7 +281,7 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="357.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane4" layoutX="30.0" layoutY="357.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image4" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -293,7 +304,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn4" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn4" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn4Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -303,14 +314,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="704.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane7" layoutX="30.0" layoutY="704.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image7" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr7" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr7" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -326,7 +337,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn7" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn7" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn7Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -336,14 +347,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="670.0" layoutY="704.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane8" layoutX="670.0" layoutY="704.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image9" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr9" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr9" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -359,7 +370,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn9" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn9" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn9Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -369,14 +380,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="350.0" layoutY="704.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane9" layoutX="350.0" layoutY="704.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image8" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr8" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr8" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -392,7 +403,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn8" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn8" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn8Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -402,14 +413,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="1051.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane10" layoutX="30.0" layoutY="1051.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image10" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr10" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr10" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -425,7 +436,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn10" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn10" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn10Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -435,14 +446,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="670.0" layoutY="1051.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane11" layoutX="670.0" layoutY="1051.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image12" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr12" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr12" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -458,7 +469,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn12" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn12" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn12Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -468,14 +479,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="350.0" layoutY="1051.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane12" layoutX="350.0" layoutY="1051.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image11" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr11" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr11" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -491,7 +502,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn11" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn11" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn11Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -501,14 +512,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="350.0" layoutY="1398.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane13" layoutX="350.0" layoutY="1398.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image14" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr14" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr14" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -524,7 +535,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn14" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn14" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn14Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -534,14 +545,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="670.0" layoutY="1398.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane14" layoutX="670.0" layoutY="1398.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image15" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr15" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr15" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -557,7 +568,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn15" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn15" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn15Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -567,14 +578,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="1398.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane15" layoutX="30.0" layoutY="1398.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image13" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr13" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr13" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -590,7 +601,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn13" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn13" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn13Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -600,14 +611,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="670.0" layoutY="1745.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane16" layoutX="670.0" layoutY="1745.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image18" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr18" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr18" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -623,7 +634,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn18" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn18" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn18Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -633,14 +644,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="1745.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane17" layoutX="30.0" layoutY="1745.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image16" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr16" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr16" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -656,7 +667,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn16" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn16" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn16Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -666,14 +677,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="350.0" layoutY="1745.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane18" layoutX="350.0" layoutY="1745.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image17" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr17" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr17" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -689,7 +700,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn17" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn17" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn17Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -699,14 +710,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="670.0" layoutY="2092.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane19" layoutX="670.0" layoutY="2092.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image21" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr21" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr21" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -722,7 +733,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn21" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn21" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn21Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -732,14 +743,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="2092.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane20" layoutX="30.0" layoutY="2092.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image19" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr19" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr19" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -755,7 +766,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn19" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn19" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn19Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -765,14 +776,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="350.0" layoutY="2092.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane21" layoutX="350.0" layoutY="2092.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image20" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr20" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr20" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -788,7 +799,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn20" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn20" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn20Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -798,14 +809,14 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="2439.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
+                  <AnchorPane fx:id="pane22" layoutX="30.0" layoutY="2439.0" prefHeight="327.0" prefWidth="270.0" style="-fx-background-color: #f3f3f3;">
                      <children>
                         <ImageView fx:id="image22" fitHeight="180.0" fitWidth="270.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../sources/pizza1.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="descr22" layoutX="10.0" layoutY="190.0" prefHeight="38.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
+                        <Label fx:id="descr22" layoutX="10.0" layoutY="182.0" prefHeight="55.0" prefWidth="250.0" text="Курка, Моцарелла, Цибуля, Бекон, Гриби, Соус" wrapText="true">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -821,7 +832,7 @@
                               <Font name="Century Gothic" size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="addBttn22" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
+                        <Button fx:id="addBttn22" alignment="CENTER" layoutX="121.0" layoutY="279.0" mnemonicParsing="false" onAction="#addBttn22Action" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Додати в кошик" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -835,5 +846,13 @@
             </Pane>
          </content>
       </ScrollPane>
+      <Button fx:id="exitBttn" layoutX="410.0" layoutY="463.0" mnemonicParsing="false" onAction="#closeButtonAction" style="-fx-background-color: transparent;" text="Завершити роботу" textFill="#ce343e" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

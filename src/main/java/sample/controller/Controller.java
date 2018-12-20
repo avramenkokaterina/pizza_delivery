@@ -95,6 +95,7 @@ public class Controller {
         Stage stage = (Stage) exitBttn.getScene().getWindow();
         stage.hide();
         URL url = new File("src/main/java/sample/view/loginForm.fxml").toURI().toURL();
+        //URL url = new File("src/main/java/sample/view/courierForm.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
