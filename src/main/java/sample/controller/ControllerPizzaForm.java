@@ -480,6 +480,7 @@ public class ControllerPizzaForm {
             newStage.setScene(new Scene(root));
             newStage.initStyle(StageStyle.UNDECORATED);
             newStage.showAndWait();
+            stage.close();
         }
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -10,30 +11,42 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="276.0" prefWidth="375.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerLoginForm">
     <children>
-        <Button fx:id="logInButton" alignment="CENTER" layoutX="101.0" layoutY="184.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Увійти" textFill="WHITE">
+        <Button fx:id="logInButton" alignment="CENTER" layoutX="101.0" layoutY="184.0" mnemonicParsing="false" onAction="#logInButtonAction" prefHeight="40.0" prefWidth="175.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Увійти" textFill="WHITE">
             <font>
                 <Font name="Century Gothic Bold" size="20.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
       <PasswordField fx:id="passwordEnter" layoutX="88.0" layoutY="138.0" prefHeight="30.0" prefWidth="200.0" promptText="Пароль">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </PasswordField>
       <TextField fx:id="loginEnter" layoutX="88.0" layoutY="93.0" prefHeight="30.0" prefWidth="200.0" promptText="Логін">
          <font>
             <Font size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
       <Label layoutX="132.0" layoutY="32.0" text="Увійти">
          <font>
             <Font name="Century Gothic Bold" size="35.0" />
          </font>
       </Label>
-      <Button fx:id="signInButton" layoutX="112.0" layoutY="233.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Зареєструватись" textFill="#ce343e" underline="true">
+      <Button fx:id="closeButton" layoutX="106.0" layoutY="233.0" mnemonicParsing="false" onAction="#closeButtonAction" style="-fx-background-color: transparent;" text="Повернутись назад" textFill="#ce343e" underline="true">
          <font>
             <Font name="Century Gothic" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
     </children>
 </AnchorPane>

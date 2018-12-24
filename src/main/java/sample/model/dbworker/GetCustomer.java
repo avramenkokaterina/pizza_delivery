@@ -19,7 +19,7 @@ public class GetCustomer {
         return customers;
     }
 
-    public List<Customer> getCourier(){
+    public List<Customer> getCustomers(){
         DBWorker worker = new DBWorker();
         Statement statement = null;
         String query = "SELECT * FROM CUSTOMER";

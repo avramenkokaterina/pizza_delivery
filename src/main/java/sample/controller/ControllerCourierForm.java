@@ -13,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.model.Courier;
 import sample.model.dbworker.DBWorker;
 import sample.model.dbworker.requests.CourierFormRequestResult;
 
@@ -173,11 +174,15 @@ public class ControllerCourierForm {
     }
 
     @FXML
-    public void initialize() {
-        //добавь сюда имя и фамилию!!!!!!!!!!!!!!!!!!!!!!!
-        name.setText("Name Name");
-
+    public void initialize()  throws Exception {
         initData();
+
+        ControllerLoginForm loginForm = new ControllerLoginForm();
+        Courier currentCourier;
+        currentCourier = loginForm.getExistingCourier();
+        String courierNameAndSurname = currentCourier.getNameCourier() +" " + currentCourier.getSurnameCourier();
+        name.setText(courierNameAndSurname);
+
         idInvoice.setCellValueFactory(new PropertyValueFactory<CourierFormRequestResult, Integer>("idInvoice"));
         idPayment.setCellValueFactory(new PropertyValueFactory<CourierFormRequestResult, Integer>("idPayment"));
         paymentTypeName.setCellValueFactory(new PropertyValueFactory<CourierFormRequestResult, String>("paymentTypeName"));
