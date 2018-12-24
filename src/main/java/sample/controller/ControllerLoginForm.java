@@ -33,12 +33,16 @@ public class ControllerLoginForm {
 
     private Courier existingCourier;
 
-    public ControllerLoginForm()throws Exception{
+    public ControllerLoginForm(){
         existingCourier = new Courier();
-    }
+  }
 
     public Courier getExistingCourier(){
         return existingCourier;
+    }
+
+    public void setExistingCourier(Courier existingCourier) {
+        this.existingCourier = existingCourier;
     }
 
     @FXML

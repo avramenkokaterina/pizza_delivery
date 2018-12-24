@@ -15,7 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        URL url = new File("src/main/java/sample/view/sample.fxml").toURI().toURL();
+        URL url = new File("src/main/java/sample/view/courierEditForm.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         primaryStage.setTitle("Pizza Delivery Service");
         primaryStage.initStyle(StageStyle.UNDECORATED);

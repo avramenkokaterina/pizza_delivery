@@ -15,7 +15,7 @@
     <children>
         <AnchorPane prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;">
             <children>
-                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log out">
+                <Button fx:id="logoutButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" onAction="#logoutButtonAction" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log out">
                     <font>
                         <Font name="Century Gothic" size="16.0" />
                     </font>
@@ -23,20 +23,29 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Creator">
+                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" onAction="#creatorClick" style="-fx-background-color: transparent;" text="Creator">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
-                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Documentation">
+                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" onAction="#docClick" style="-fx-background-color: transparent;" text="Documentation">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
-                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Help">
+                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" onAction="#helpClick" style="-fx-background-color: transparent;" text="Help">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="129.0" layoutY="6.0">
                     <image>
@@ -60,7 +69,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <Button fx:id="showReportBttn" alignment="CENTER" layoutX="381.0" layoutY="453.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="247.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Повернутись" textFill="WHITE">
+        <Button fx:id="closeBttn" alignment="CENTER" layoutX="381.0" layoutY="453.0" mnemonicParsing="false" onAction="#closeBttnAction" prefHeight="31.0" prefWidth="247.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Повернутись" textFill="WHITE">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -70,20 +79,20 @@
         </Button>
       <TabPane layoutX="50.0" layoutY="90.0" prefHeight="333.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Клієнти">
+          <Tab fx:id="customers" onSelectionChanged="#customersAction" text="Клієнти">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #e5e5e5;">
                      <children>
-                        <TableView layoutX="460.0" layoutY="30.0" prefHeight="236.0" prefWidth="400.0">
+                        <TableView fx:id="customersTable" layoutX="460.0" layoutY="30.0" prefHeight="236.0" prefWidth="400.0">
                           <columns>
-                            <TableColumn prefWidth="53.6666259765625" text="id" />
-                            <TableColumn prefWidth="89.66668701171875" text="name" />
-                              <TableColumn prefWidth="100.33331298828125" text="surname" />
-                              <TableColumn prefWidth="83.0" text="telephone" />
-                              <TableColumn prefWidth="72.0" text="email" />
+                            <TableColumn fx:id="idCustomer" prefWidth="53.6666259765625" text="id" />
+                            <TableColumn fx:id="nameCustomer" prefWidth="89.66668701171875" text="name" />
+                              <TableColumn fx:id="surnameCustomer" prefWidth="100.33331298828125" text="surname" />
+                              <TableColumn fx:id="phoneCustomer" prefWidth="83.0" text="telephone" />
+                              <TableColumn fx:id="emailCustomer" prefWidth="72.0" text="email" />
                           </columns>
                         </TableView>
-                        <Button fx:id="logInButton1" layoutX="165.0" layoutY="115.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Оновити" textFill="WHITE">
+                        <Button fx:id="updateClient" layoutX="165.0" layoutY="115.0" mnemonicParsing="false" onAction="#updateClientAction" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Оновити" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -96,8 +105,8 @@
                               <Font name="Century Gothic" size="14.0" />
                            </font>
                         </Label>
-                        <ComboBox layoutX="139.0" layoutY="24.0" prefHeight="28.0" prefWidth="180.0" />
-                        <TextField layoutX="139.0" layoutY="64.0">
+                        <ComboBox fx:id="choiceIDCustomerUpd" layoutX="139.0" layoutY="24.0" prefHeight="28.0" prefWidth="180.0" />
+                        <TextField fx:id="txtBoxTelephone" layoutX="139.0" layoutY="64.0">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
@@ -107,7 +116,7 @@
                               <Font name="Century Gothic" size="14.0" />
                            </font>
                         </Label>
-                        <Button fx:id="logInButton11" layoutX="165.0" layoutY="228.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Видалити" textFill="WHITE">
+                        <Button fx:id="deleteClient" layoutX="165.0" layoutY="228.0" mnemonicParsing="false" onAction="#deleteClientAction" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Видалити" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -120,22 +129,22 @@
                               <Font name="Century Gothic" size="14.0" />
                            </font>
                         </Label>
-                        <ComboBox layoutX="139.0" layoutY="188.0" prefHeight="28.0" prefWidth="180.0" />
+                        <ComboBox fx:id="choiceIDCustomerDel" layoutX="139.0" layoutY="188.0" prefHeight="28.0" prefWidth="180.0" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Замовлення">
+          <Tab fx:id="invoices" onSelectionChanged="#invoicesAction" text="Замовлення">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #e5e5e5;">
                      <children>
-                        <ComboBox layoutX="139.0" layoutY="188.0" prefHeight="28.0" prefWidth="180.0" />
+                        <ComboBox fx:id="choiceIDInvoiceDel" layoutX="139.0" layoutY="188.0" prefHeight="28.0" prefWidth="180.0" />
                         <Label layoutX="113.0" layoutY="192.0" text="ID">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
                         </Label>
-                        <Button fx:id="logInButton111" layoutX="165.0" layoutY="228.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Видалити" textFill="WHITE">
+                        <Button fx:id="deleteInvoice" layoutX="165.0" layoutY="228.0" mnemonicParsing="false" onAction="#deleteInvoiceAction" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Видалити" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -148,18 +157,18 @@
                               <Font name="Century Gothic" size="14.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="139.0" layoutY="64.0">
+                        <TextField fx:id="datetxtBox" layoutX="139.0" layoutY="64.0">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
                         </TextField>
-                        <ComboBox layoutX="139.0" layoutY="24.0" prefHeight="28.0" prefWidth="180.0" />
+                        <ComboBox fx:id="choiceIDInvoiceUpd" layoutX="139.0" layoutY="24.0" prefHeight="28.0" prefWidth="180.0" />
                         <Label layoutX="113.0" layoutY="28.0" text="ID">
                            <font>
                               <Font name="Century Gothic" size="14.0" />
                            </font>
                         </Label>
-                        <Button fx:id="logInButton12" layoutX="165.0" layoutY="115.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Оновити" textFill="WHITE">
+                        <Button fx:id="updateInvoice" layoutX="165.0" layoutY="115.0" mnemonicParsing="false" onAction="#updateInvoiceAction" prefHeight="24.0" prefWidth="130.0" style="-fx-background-color: #4497db;" text="Оновити" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -167,13 +176,12 @@
                               <Font name="Century Gothic Bold" size="14.0" />
                            </font>
                         </Button>
-                        <TableView layoutX="460.0" layoutY="30.0" prefHeight="236.0" prefWidth="400.0">
+                        <TableView fx:id="invoiceTable" layoutX="460.0" layoutY="30.0" prefHeight="236.0" prefWidth="400.0">
                            <columns>
-                              <TableColumn prefWidth="53.6666259765625" text="id" />
-                              <TableColumn prefWidth="76.6666259765625" text="id_payment" />
-                              <TableColumn prefWidth="114.3333740234375" text="id_invoice_detail" />
-                              <TableColumn prefWidth="83.0" text="arriving_time" />
-                              <TableColumn prefWidth="72.0" text="status" />
+                              <TableColumn fx:id="idInvoice" prefWidth="53.6666259765625" text="id" />
+                              <TableColumn fx:id="idPayment" prefWidth="117.0" text="id_payment" />
+                              <TableColumn fx:id="arrivingTime" prefWidth="113.0" text="arriving_time" />
+                              <TableColumn fx:id="status" prefWidth="115.0" text="status" />
                            </columns>
                         </TableView>
                      </children></AnchorPane>

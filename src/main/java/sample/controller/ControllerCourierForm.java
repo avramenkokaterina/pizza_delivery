@@ -177,12 +177,6 @@ public class ControllerCourierForm {
     public void initialize()  throws Exception {
         initData();
 
-        ControllerLoginForm loginForm = new ControllerLoginForm();
-        Courier currentCourier;
-        currentCourier = loginForm.getExistingCourier();
-        String courierNameAndSurname = currentCourier.getNameCourier() +" " + currentCourier.getSurnameCourier();
-        name.setText(courierNameAndSurname);
-
         idInvoice.setCellValueFactory(new PropertyValueFactory<CourierFormRequestResult, Integer>("idInvoice"));
         idPayment.setCellValueFactory(new PropertyValueFactory<CourierFormRequestResult, Integer>("idPayment"));
         paymentTypeName.setCellValueFactory(new PropertyValueFactory<CourierFormRequestResult, String>("paymentTypeName"));
@@ -198,6 +192,12 @@ public class ControllerCourierForm {
     }
 
     private void initData() {
+//        Courier currentCourier;
+//        ControllerLoginForm loginForm = new ControllerLoginForm();
+//        currentCourier = loginForm.getExistingCourier();
+//        String courierNameAndSurname = currentCourier.getNameCourier() +" " + currentCourier.getSurnameCourier();
+//        name.setText(courierNameAndSurname);
+
         DBWorker worker = new DBWorker();
         Statement statement = null;
         String query = "SELECT i.id_invoice , i.id_payment ,pt.PAYMENT_TYPE_NAME, piz.pizza_name , idet.quantity , c.id_customer , " +
