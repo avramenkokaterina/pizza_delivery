@@ -13,7 +13,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import sample.model.Courier;
 import sample.model.dbworker.DBWorker;
 import sample.model.dbworker.requests.CourierFormRequestResult;
 

@@ -15,7 +15,7 @@
     <children>
         <AnchorPane prefHeight="65.0" prefWidth="1000.0" style="-fx-background-color: #ffffff; -fx-border-color: #e5e5e5;">
             <children>
-                <Button fx:id="logInButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log out">
+                <Button fx:id="logoutButton" layoutX="900.0" layoutY="15.0" mnemonicParsing="false" onAction="#logoutButtonAction" prefHeight="24.0" prefWidth="85.0" style="-fx-background-color: #e5e5e5;" text="Log out">
                     <font>
                         <Font name="Century Gothic" size="16.0" />
                     </font>
@@ -23,20 +23,29 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Creator">
+                <Button fx:id="creatorButtonText" layoutX="43.0" layoutY="15.0" mnemonicParsing="false" onAction="#creatorAction" style="-fx-background-color: transparent;" text="Creator">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
-                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Documentation">
+                <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" onAction="#docAction" style="-fx-background-color: transparent;" text="Documentation">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
-                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Help">
+                <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" onAction="#helpAction" style="-fx-background-color: transparent;" text="Help">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="129.0" layoutY="6.0">
                     <image>
@@ -60,15 +69,15 @@
                 </Label>
             </children>
         </AnchorPane>
-        <TableView fx:id="table" layoutX="50.0" layoutY="278.0" prefHeight="160.0" prefWidth="404.0">
+        <TableView fx:id="tablePizzas" layoutX="50.0" layoutY="278.0" prefHeight="160.0" prefWidth="404.0">
             <columns>
-                <TableColumn prefWidth="124.66668701171875" text="pizza_name" />
-                <TableColumn prefWidth="103.0" text="purchase_time" />
-                <TableColumn prefWidth="95.66668701171875" text="price" />
-                <TableColumn prefWidth="79.0" text="size" />
+                <TableColumn fx:id="pizzaName" prefWidth="124.66668701171875" text="pizza_name" />
+                <TableColumn fx:id="purchaseTime" prefWidth="103.0" text="purchase_time" />
+                <TableColumn fx:id="pizzaPrice" prefWidth="95.66668701171875" text="price" />
+                <TableColumn fx:id="pizzaSize" prefWidth="79.0" text="size" />
             </columns>
         </TableView>
-        <Button fx:id="showReportBttn" alignment="CENTER" layoutX="381.0" layoutY="453.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="247.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Повернутись" textFill="WHITE">
+        <Button fx:id="closeBttn" alignment="CENTER" layoutX="381.0" layoutY="453.0" mnemonicParsing="false" onAction="#closeBttnAction" prefHeight="31.0" prefWidth="247.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Повернутись" textFill="WHITE">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -81,33 +90,57 @@
                 <Image url="@../../../../../sources/Screenshot_3.png" />
             </image>
         </ImageView>
-      <Label fx:id="name1" alignment="CENTER" layoutX="172.0" layoutY="233.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #4497db; -fx-background-radius: 5;" text="Звіт по піцам" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="name1" alignment="CENTER" layoutX="151.0" layoutY="233.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #4497db; -fx-background-radius: 5;" text="Звіт по піцам" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="table1" layoutX="469.0" layoutY="278.0" prefHeight="160.0" prefWidth="265.0">
+      <TableView fx:id="tableCourierBest" layoutX="469.0" layoutY="278.0" prefHeight="160.0" prefWidth="265.0">
          <columns>
-            <TableColumn prefWidth="65.33331298828125" text="id_courier" />
-            <TableColumn prefWidth="134.0" text="name" />
-            <TableColumn prefWidth="64.3333740234375" text="better" />
+            <TableColumn fx:id="idCourier" prefWidth="65.33331298828125" text="id_courier" />
+            <TableColumn fx:id="nameCourier1" prefWidth="134.0" text="name" />
+            <TableColumn fx:id="better" prefWidth="64.3333740234375" text="better" />
          </columns>
       </TableView>
-      <Label fx:id="name11" alignment="CENTER" layoutX="527.0" layoutY="233.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #4497db; -fx-background-radius: 5;" text="Звіт по кур'єрам" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="name11" alignment="CENTER" layoutX="501.0" layoutY="233.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #4497db; -fx-background-radius: 5;" text="Звіт по кур'єрам" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="table11" layoutX="749.0" layoutY="278.0" prefHeight="160.0" prefWidth="201.0">
+      <TableView fx:id="tableSum" layoutX="749.0" layoutY="278.0" prefHeight="160.0" prefWidth="201.0">
          <columns>
-            <TableColumn prefWidth="132.66668701171875" text="name" />
-            <TableColumn prefWidth="67.0" text="total_sum" />
+            <TableColumn fx:id="nameCourier2" prefWidth="132.66668701171875" text="name" />
+            <TableColumn fx:id="totalSum" prefWidth="67.0" text="total_sum" />
          </columns>
       </TableView>
-      <Label fx:id="name111" alignment="CENTER" layoutX="771.0" layoutY="233.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #4497db; -fx-background-radius: 5;" text="Звіт по кур'єрам" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="name111" alignment="CENTER" layoutX="749.0" layoutY="233.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #4497db; -fx-background-radius: 5;" text="Звіт по кур'єрам" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
+      <ImageView fx:id="wordBttn1" fitHeight="33.0" fitWidth="33.0" layoutX="319.0" layoutY="233.0" onMouseClicked="#wordBttn1Action" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../sources/word.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="wordBttn2" fitHeight="33.0" fitWidth="33.0" layoutX="669.0" layoutY="233.0" onMouseClicked="#wordBttn2Action" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../../../../../sources/word.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="wordBttn3" fitHeight="33.0" fitWidth="33.0" layoutX="917.0" layoutY="233.0" onMouseClicked="#wordBttn3Action" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../../../../../sources/word.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
