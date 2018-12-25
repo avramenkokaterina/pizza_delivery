@@ -1,5 +1,7 @@
 package sample.controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -93,9 +95,6 @@ public class ControllerOrderForm {
 
     @FXML
     private Label namePizza;
-
-    @FXML
-    private ComboBox<String> size;
 
     @FXML
     private TextField name;
@@ -249,7 +248,7 @@ public class ControllerOrderForm {
         int idInvoice = getterInvoice.getInvoices().size() + 1;
         int idPayment = idInvoice;
 
-        int idCourier = random.nextInt(5) + 1 ;
+        int idCourier = random.nextInt(5) + 1;
         String purchaseTime = date.getValue().format(formatter);
         String arrivingTime = purchaseTime;
         String status = "не завершено";
@@ -272,6 +271,7 @@ public class ControllerOrderForm {
         }
     }
 
+
     @FXML
     void OrderButtonFinalAction() throws Exception {
         orderAction();
@@ -286,6 +286,12 @@ public class ControllerOrderForm {
         } else {
             quantitylbl.setText(String.valueOf(quantity - 1));
             numberlbl.setText(String.valueOf(quantity - 1));
+            String price = pizzaPrice.getText();
+            int startIndex = 0;
+            int endIndex = price.indexOf(".");
+            int tempPrice = Integer.parseInt(price.substring(startIndex, endIndex));
+            totalPricelbl.setText(String.valueOf(tempPrice*(quantity-1)) + ".00 грн.");
+            totalPrice.setText(String.valueOf(tempPrice*(quantity-1)) + ".00 грн.");
         }
     }
 
@@ -294,11 +300,44 @@ public class ControllerOrderForm {
         int quantity = Integer.parseInt(quantitylbl.getText());
         quantitylbl.setText(String.valueOf(quantity + 1));
         numberlbl.setText(String.valueOf(quantity + 1));
+
+        String price = pizzaPrice.getText();
+        int startIndex = 0;
+        int endIndex = price.indexOf(".");
+        int tempPrice = Integer.parseInt(price.substring(startIndex, endIndex));
+        totalPricelbl.setText(String.valueOf(tempPrice*(quantity+1)) + ".00 грн.");
+        totalPrice.setText(String.valueOf(tempPrice*(quantity+1)) + ".00 грн.");
+    }
+
+    private int sPrice;
+
+
+    @FXML
+    private void ssizeAction(){
+        pizzaPrice.setText(String.valueOf(sPrice) + ".00 грн.");
+        totalPricelbl.setText(String.valueOf(sPrice) + ".00 грн.");
+        totalPrice.setText(String.valueOf(sPrice) + ".00 грн.");
     }
 
     @FXML
-    public void initialize() {
+    private void msizeAction(){
+        int msize = 50;
+        pizzaPrice.setText(String.valueOf(msize + sPrice) + ".00 грн.");
+        totalPricelbl.setText(String.valueOf(msize + sPrice) + ".00 грн.");
+        totalPrice.setText(String.valueOf(msize + sPrice) + ".00 грн.");
+    }
 
+    @FXML
+    private void lsizeAction(){
+        int lsize = 100;
+        pizzaPrice.setText(String.valueOf(lsize + sPrice) + ".00 грн.");
+        totalPricelbl.setText(String.valueOf(lsize + sPrice) + ".00 грн.");
+        totalPrice.setText(String.valueOf(lsize + sPrice) + ".00 грн.");
+    }
+
+
+    @FXML
+    public void initialize() {
         PizzaFormRequestResult currentPizza;
         currentPizza = PizzaState.getInstance().getPizza();
         image.setImage(currentPizza.getImage());
@@ -306,8 +345,11 @@ public class ControllerOrderForm {
         descr.setText(currentPizza.getIngr());
         pizzaPrice.setText(String.valueOf(currentPizza.getPrice()));
 
-        int msize = 50;
-        int lsize = 100;
+        sPrice = currentPizza.getPrice();
+        pizzaPrice.setText(String.valueOf(sPrice)+ ".00 грн.");
+        int tempPrice = sPrice * Integer.parseInt(quantitylbl.getText());
+        totalPricelbl.setText(String.valueOf(tempPrice) + ".00 грн.");
+        totalPrice.setText(String.valueOf(tempPrice) + ".00 грн.");
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.mm.yyyy");
         numberlbl.setText("1");
@@ -318,30 +360,9 @@ public class ControllerOrderForm {
         payment.getItems().removeAll(payment.getItems());
         payment.getItems().addAll("Готівкою кур'єру", "Картою кур'єру");
         payment.setValue("Готівкою кур'єру");
-        size.getItems().removeAll(size.getItems());
-        size.getItems().addAll("S", "M", "L");
-        size.setValue("L");
         date.setValue(LocalDate.now());
 
-        if (size.getValue().equals("S")){
-            pizzaPrice.setText(String.valueOf(currentPizza.getPrice()));
-            int tempPrice = currentPizza.getPrice() * Integer.parseInt(quantitylbl.getText());
-            totalPricelbl.setText(String.valueOf(tempPrice));
-            totalPrice.setText(pizzaPrice.getText());
-        } else {
-            if (size.getValue().equals("M")){
-                pizzaPrice.setText(String.valueOf(msize + currentPizza.getPrice()));
-                int tempPrice = (msize + currentPizza.getPrice()) * Integer.parseInt(quantitylbl.getText());
-                totalPricelbl.setText(String.valueOf(tempPrice));
-                totalPrice.setText(pizzaPrice.getText());
-            }
-            else if (size.getValue().equals("L")){
-                pizzaPrice.setText(String.valueOf(lsize + currentPizza.getPrice()));
-                int tempPrice = (lsize + currentPizza.getPrice()) * Integer.parseInt(quantitylbl.getText());
-                totalPricelbl.setText(String.valueOf(tempPrice));
-                totalPrice.setText(pizzaPrice.getText());
-            }
-        }
     }
+
 
 }
