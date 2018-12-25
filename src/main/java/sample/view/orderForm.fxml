@@ -26,16 +26,25 @@
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button fx:id="docButtonText" layoutX="173.0" layoutY="15.0" mnemonicParsing="false" onAction="#docClick" style="-fx-background-color: transparent;" text="Documentation">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button fx:id="helpButtonText" layoutX="357.0" layoutY="15.0" mnemonicParsing="false" onAction="#helpClick" style="-fx-background-color: transparent;" text="Help">
                     <font>
                         <Font name="Century Gothic Bold" size="16.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button fx:id="orderButton" alignment="CENTER" layoutX="660.0" layoutY="11.0" mnemonicParsing="false" onAction="#orderAction" prefHeight="39.0" prefWidth="233.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="                      Замовити" textFill="WHITE">
                     <font>
@@ -74,7 +83,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Label>
-                <Label fx:id="numberlbl" layoutX="651.0" layoutY="21.0" text="22">
+                <Label fx:id="numberlbl" layoutX="655.0" layoutY="21.0" text="9">
                     <font>
                         <Font name="Century Gothic" size="17.0" />
                     </font>
@@ -102,7 +111,7 @@
                                     <Image url="@../../../../../sources/pizza1.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="name" layoutX="150.0" layoutY="6.0" text="Піца Гавайська">
+                              <Label fx:id="namePizza" layoutX="150.0" layoutY="6.0" text="Text Text Text Text Text Text Text ">
                                  <font>
                                     <Font name="Century Gothic Bold" size="16.0" />
                                  </font>
@@ -119,7 +128,7 @@
                                  </font>
                               </Label>
                               <Circle fill="#ce343e" layoutX="302.0" layoutY="95.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                              <Button fx:id="quantityAdd" graphicTextGap="0.0" layoutX="312.0" layoutY="83.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-background-radius: 15;" text="+">
+                              <Button fx:id="quantityAdd" graphicTextGap="0.0" layoutX="312.0" layoutY="83.0" mnemonicParsing="false" onAction="#quantityAddAction" style="-fx-background-color: #ffffff; -fx-background-radius: 15;" text="+">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -127,12 +136,12 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Button>
-                              <Label layoutX="299.0" layoutY="88.0" text="0" textFill="WHITE">
+                              <Label fx:id="quantitylbl" layoutX="299.0" layoutY="88.0" text="0" textFill="WHITE">
                                  <font>
                                     <Font name="Century Gothic" size="12.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="quantitySubtr" graphicTextGap="0.0" layoutX="266.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="27.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15;" text="-">
+                              <Button fx:id="quantitySubtr" graphicTextGap="0.0" layoutX="266.0" layoutY="83.0" mnemonicParsing="false" onAction="#quantitySubtrAction" prefHeight="25.0" prefWidth="27.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15;" text="-">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -140,7 +149,10 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Button>
-                              <ComboBox fx:id="size" layoutX="205.0" layoutY="61.0" prefHeight="25.0" prefWidth="61.0" promptText="M" />
+                              <ComboBox fx:id="size" layoutX="205.0" layoutY="61.0" prefHeight="25.0" prefWidth="61.0" promptText="M">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></ComboBox>
                            </children>
                         </Pane>
                      </content>
@@ -167,105 +179,122 @@
             </Button>
          </children>
       </Pane>
-      <Label layoutX="87.0" layoutY="118.0" text="Вулиця">
+      <Label layoutX="87.0" layoutY="135.0" text="Вулиця">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="street" layoutX="156.0" layoutY="115.0" prefHeight="25.0" prefWidth="200.0">
+      <TextField fx:id="street" layoutX="156.0" layoutY="132.0" prefHeight="25.0" prefWidth="200.0">
          <font>
             <Font name="Century Gothic" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
-      <TextField fx:id="building" layoutX="156.0" layoutY="151.0" prefHeight="29.0" prefWidth="74.0">
+      <TextField fx:id="building" layoutX="156.0" layoutY="168.0" prefHeight="29.0" prefWidth="74.0">
          <font>
             <Font name="Century Gothic" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
-      <Label layoutX="74.0" layoutY="154.0" text="Будинок">
+      <Label layoutX="74.0" layoutY="171.0" text="Будинок">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="244.0" layoutY="154.0" text="Кв.">
+      <Label layoutX="244.0" layoutY="171.0" text="Кв.">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="appartment" layoutX="282.0" layoutY="151.0" prefHeight="29.0" prefWidth="74.0">
+      <TextField fx:id="appartment" layoutX="282.0" layoutY="168.0" prefHeight="29.0" prefWidth="74.0">
          <font>
             <Font name="Century Gothic" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
-      <DatePicker fx:id="date" layoutX="156.0" layoutY="191.0" prefHeight="29.0" prefWidth="200.0" />
-      <Label layoutX="103.0" layoutY="194.0" text="Дата">
+      <DatePicker fx:id="date" layoutX="156.0" layoutY="208.0" prefHeight="29.0" prefWidth="200.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></DatePicker>
+      <Label layoutX="103.0" layoutY="211.0" text="Дата">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="115.0" layoutY="230.0" text="Час">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="time" layoutX="156.0" layoutY="227.0" prefHeight="25.0" prefWidth="200.0" promptText="Найближчий">
+      <TextField fx:id="name" layoutX="156.0" layoutY="248.0" prefHeight="25.0" prefWidth="200.0">
          <font>
             <Font name="Century Gothic" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
-      <TextField fx:id="name" layoutX="156.0" layoutY="264.0" prefHeight="25.0" prefWidth="200.0">
+      <Label layoutX="116.0" layoutY="251.0" text="Ім'я">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="288.0" text="Прізвище">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="surname" layoutX="156.0" layoutY="285.0" prefHeight="25.0" prefWidth="200.0">
          <font>
             <Font name="Century Gothic" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
-      <Label layoutX="116.0" layoutY="267.0" text="Ім'я">
+      <Label layoutX="98.0" layoutY="98.0" text="Місто">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="64.0" layoutY="304.0" text="Прізвище">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="surname" layoutX="156.0" layoutY="301.0" prefHeight="25.0" prefWidth="200.0">
+      <ComboBox fx:id="city" editable="true" layoutX="156.0" layoutY="97.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="email" layoutX="156.0" layoutY="358.0" prefHeight="25.0" prefWidth="200.0">
          <font>
             <Font name="Century Gothic" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
-      <Label layoutX="98.0" layoutY="81.0" text="Місто">
+      <Label layoutX="65.0" layoutY="324.0" text="Телефон">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <ComboBox fx:id="city" editable="true" layoutX="156.0" layoutY="80.0" prefHeight="25.0" prefWidth="200.0" />
-      <TextField fx:id="email" layoutX="156.0" layoutY="374.0" prefHeight="25.0" prefWidth="200.0">
+      <Label layoutX="94.0" layoutY="361.0" text="e-mail">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="telephone" layoutX="156.0" layoutY="321.0" prefHeight="25.0" prefWidth="200.0">
          <font>
             <Font name="Century Gothic" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
-      <Label layoutX="65.0" layoutY="340.0" text="Телефон">
+      <Label layoutX="52.0" layoutY="397.0" text="Тип оплати">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="94.0" layoutY="377.0" text="e-mail">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="telephone" layoutX="156.0" layoutY="337.0" prefHeight="25.0" prefWidth="200.0">
-         <font>
-            <Font name="Century Gothic" size="15.0" />
-         </font>
-      </TextField>
-      <Label layoutX="52.0" layoutY="413.0" text="Тип оплати">
-         <font>
-            <Font name="Century Gothic" size="18.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="payment" editable="true" layoutX="157.0" layoutY="412.0" prefHeight="25.0" prefWidth="200.0" />
-      <Button fx:id="orderButtonFinal" alignment="CENTER" layoutX="177.0" layoutY="453.0" mnemonicParsing="false" onAction="#OrderButtonFinalAction" prefHeight="33.0" prefWidth="135.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Замовити" textFill="WHITE">
+      <ComboBox fx:id="payment" editable="true" layoutX="157.0" layoutY="396.0" prefHeight="25.0" prefWidth="200.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button fx:id="orderButtonFinal" alignment="CENTER" layoutX="177.0" layoutY="437.0" mnemonicParsing="false" onAction="#OrderButtonFinalAction" prefHeight="33.0" prefWidth="135.0" style="-fx-background-color: #ce343e; -fx-border-color: #ce343e; -fx-border-radius: 7; -fx-border-width: 2; -fx-background-radius: 7;" text="Замовити" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

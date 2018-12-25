@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.model.Courier;
 import sample.model.Customer;
 import sample.model.Invoice;
 import sample.model.dbworker.GetCourier;
@@ -22,6 +23,7 @@ import sample.model.dbworker.requests.CustomerDelete;
 import sample.model.dbworker.requests.CustomerUpdate;
 import sample.model.dbworker.requests.InvoiceDelete;
 import sample.model.dbworker.requests.InvoiceUpdate;
+import sample.state.CourierState;
 
 import javax.swing.text.html.InlineView;
 import java.awt.*;
@@ -141,12 +143,24 @@ public class ControllerCourierEditForm {
     }
 
     @FXML
+    public void initialize() {
+        initData();
+
+        Courier currentCourier;
+        currentCourier = CourierState.getInstance().getCourier();
+
+        String courierNameAndSurname = currentCourier.getNameCourier() +" " + currentCourier.getSurnameCourier();
+        name.setText(courierNameAndSurname);
+    }
+
     public void initData(){
         GetCustomer customer = new GetCustomer();
         resultDataCustomer.addAll(customer.getCustomers());
 
         GetInvoice invoice = new GetInvoice();
         resultDataInvoice.addAll(invoice.getInvoices());
+
+
     }
 
     @FXML

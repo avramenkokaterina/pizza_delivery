@@ -71,7 +71,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </ImageView>
-            <Label fx:id="name" alignment="CENTER" layoutX="729.0" layoutY="15.0" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #ce343e; -fx-background-radius: 5;" text="Name Surname" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="name" alignment="CENTER" layoutX="668.0" layoutY="15.0" prefHeight="33.0" prefWidth="221.0" style="-fx-background-color: #ce343e; -fx-background-radius: 5;" text="Name Surname" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="18.0" />
                </font>

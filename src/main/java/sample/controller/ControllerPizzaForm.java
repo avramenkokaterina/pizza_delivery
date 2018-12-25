@@ -13,9 +13,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.model.Pizza;
 import sample.model.dbworker.DBWorker;
 import sample.model.dbworker.requests.BestPizzasRequestResult;
 import sample.model.dbworker.requests.PizzaFormRequestResult;
+import sample.state.PizzaState;
 
 import java.awt.*;
 import java.io.File;
@@ -474,7 +476,7 @@ public class ControllerPizzaForm {
         } else {
             Stage stage = (Stage) orderButton.getScene().getWindow();
             stage.hide();
-            URL url = new File("src/main/java/sample/view/loginUserForm.fxml").toURI().toURL();
+            URL url = new File("src/main/java/sample/view/orderForm.fxml").toURI().toURL();
             Parent root = FXMLLoader.load(url);
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
@@ -568,6 +570,7 @@ public class ControllerPizzaForm {
         orders = new ArrayList<>();
         images = new ArrayList<>();
         panes = new ArrayList<>();
+        currentPizza = new PizzaFormRequestResult();
     }
 
     public List<PizzaFormRequestResult> getResultsList() {
@@ -852,6 +855,9 @@ public class ControllerPizzaForm {
         }
     }
 
+    private PizzaFormRequestResult currentPizza;
+
+
     private void addBttnAction(Label namelbl, Label descrlbl, Label pricelbl, ImageView imageEl) {
         pizza = new PizzaFormRequestResult();
         pizza.setPizzaName(namelbl.getText());
@@ -863,6 +869,11 @@ public class ControllerPizzaForm {
         pizza.setPrice(newPrice);
         pizza.setImage(imageEl.getImage());
         totalPricelbl.setText(getPizza().getPrice() + ".00 грн.");
+        currentPizza.setPizzaName(namelbl.getText());
+        currentPizza.setIngr(descrlbl.getText());
+        currentPizza.setPrice(newPrice);
+        currentPizza.setImage(imageEl.getImage());
+        PizzaState.getInstance().setPizza(this.currentPizza);
     }
 
     @FXML

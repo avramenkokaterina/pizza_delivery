@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.model.Courier;
 import sample.model.dbworker.GetCourier;
+import sample.state.CourierState;
 
 import java.io.File;
 import java.net.URL;
@@ -62,6 +63,7 @@ public class ControllerLoginForm {
                     existingCourier.setIdCourier(courier.getIdCourier());
                     existingCourier.setSurnameCourier(courier.getSurnameCourier());
                     existingCourier.setNameCourier(courier.getNameCourier());
+                    CourierState.getInstance().setCourier(this.existingCourier);
                     openNextWindow();
 
                 }
@@ -87,26 +89,24 @@ public class ControllerLoginForm {
     @FXML
     void closeButtonAction() throws Exception{
         Stage stage = (Stage) closeButton.getScene().getWindow();
-        stage.hide();
+        stage.close();
         URL url = new File("src/main/java/sample/view/sample.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
         newStage.initStyle(StageStyle.UNDECORATED);
-        newStage.showAndWait();
-        stage.close();
+        newStage.show();
     }
 
     private void openNextWindow() throws Exception{
         Stage stage = (Stage) closeButton.getScene().getWindow();
-        stage.hide();
+        stage.close();
         URL url = new File("src/main/java/sample/view/courierForm.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
         newStage.initStyle(StageStyle.UNDECORATED);
-        newStage.showAndWait();
-        stage.close();
+        newStage.show();
     }
 
 }

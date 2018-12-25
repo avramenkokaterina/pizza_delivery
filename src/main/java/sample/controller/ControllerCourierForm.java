@@ -13,8 +13,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.model.Courier;
 import sample.model.dbworker.DBWorker;
 import sample.model.dbworker.requests.CourierFormRequestResult;
+import sample.state.CourierState;
 
 import java.awt.*;
 import java.io.File;
@@ -149,33 +151,39 @@ public class ControllerCourierForm {
     @FXML
     private void editBttnAction() throws Exception {
         Stage stage = (Stage) editBttn.getScene().getWindow();
-        stage.hide();
+        //stage.hide();
         URL url = new File("src/main/java/sample/view/courierEditForm.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
         newStage.initStyle(StageStyle.UNDECORATED);
-        newStage.showAndWait();
+        newStage.show();
         stage.close();
     }
 
     @FXML
     private void reportBttnAction() throws Exception {
         Stage stage = (Stage) showReportBttn.getScene().getWindow();
-        stage.hide();
+       // stage.hide();
         URL url = new File("src/main/java/sample/view/courierReportForm.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
         newStage.initStyle(StageStyle.UNDECORATED);
-        newStage.showAndWait();
+        newStage.show();
         stage.close();
     }
 
     @FXML
     public void initialize()  throws Exception {
         initData();
+        Courier currentCourier;
+        currentCourier = CourierState.getInstance().getCourier();
 
+        String courierNameAndSurname = currentCourier.getNameCourier() +" " + currentCourier.getSurnameCourier();
+        name.setText(courierNameAndSurname);
+
+        CourierState.getInstance().setCourier(currentCourier);
         idInvoice.setCellValueFactory(new PropertyValueFactory<CourierFormRequestResult, Integer>("idInvoice"));
         idPayment.setCellValueFactory(new PropertyValueFactory<CourierFormRequestResult, Integer>("idPayment"));
         paymentTypeName.setCellValueFactory(new PropertyValueFactory<CourierFormRequestResult, String>("paymentTypeName"));
@@ -191,12 +199,6 @@ public class ControllerCourierForm {
     }
 
     private void initData() {
-//        Courier currentCourier;
-//        ControllerLoginForm loginForm = new ControllerLoginForm();
-//        currentCourier = loginForm.getExistingCourier();
-//        String courierNameAndSurname = currentCourier.getNameCourier() +" " + currentCourier.getSurnameCourier();
-//        name.setText(courierNameAndSurname);
-
         DBWorker worker = new DBWorker();
         Statement statement = null;
         String query = "SELECT i.id_invoice , i.id_payment ,pt.PAYMENT_TYPE_NAME, piz.pizza_name , idet.quantity , c.id_customer , " +

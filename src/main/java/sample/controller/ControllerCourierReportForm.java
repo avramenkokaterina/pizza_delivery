@@ -17,10 +17,12 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.*;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import sample.model.Courier;
 import sample.model.dbworker.DBWorker;
 import sample.model.dbworker.requests.ReportBestCouriers;
 import sample.model.dbworker.requests.ReportCouriersTotalSum;
 import sample.model.dbworker.requests.ReportPizzasRequestResult;
+import sample.state.CourierState;
 
 import java.awt.*;
 import java.io.File;
@@ -182,6 +184,7 @@ public class ControllerCourierReportForm {
     }
 
     public void initData() throws Exception {
+
         DBWorker worker = new DBWorker();
         Statement statement1 = null;
         Statement statement2 = null;
@@ -257,6 +260,12 @@ public class ControllerCourierReportForm {
     @FXML
     public void initialize()  throws Exception {
         initData();
+
+        Courier currentCourier;
+        currentCourier = CourierState.getInstance().getCourier();
+
+        String courierNameAndSurname = currentCourier.getNameCourier() + " " + currentCourier.getSurnameCourier();
+        name.setText(courierNameAndSurname);
 
         pizzaName.setCellValueFactory(new PropertyValueFactory<> ("pizzaName"));
         purchaseTime.setCellValueFactory(new PropertyValueFactory<>("purchaseTime"));
