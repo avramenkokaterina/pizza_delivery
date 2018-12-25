@@ -100,14 +100,13 @@ public class ControllerOrderSuccess {
     @FXML
     private void backToMainAction() throws Exception{
         Stage stage = (Stage) backToMainBttn.getScene().getWindow();
-        stage.hide();
+        stage.close();
         URL url = new File("src/main/java/sample/view/sample.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
         newStage.initStyle(StageStyle.UNDECORATED);
-        newStage.showAndWait();
-        stage.close();
+        newStage.show();
     }
 
     @FXML

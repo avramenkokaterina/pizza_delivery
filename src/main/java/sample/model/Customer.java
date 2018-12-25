@@ -7,14 +7,14 @@ public class Customer {
     private String city;
     private String street;
     private int building;
-    private String telephone;
+    private int telephone;
     private String email;
 
     public Customer(){
 
     }
 
-    public Customer(int idCustomer, String customerName, String customerSurname, String city, String street, int building, String telephone, String email) {
+    public Customer(int idCustomer, String customerName, String customerSurname, String city, String street, int building, int telephone, String email) {
         this.idCustomer = idCustomer;
         this.customerName = customerName;
         this.customerSurname = customerSurname;
@@ -81,11 +81,11 @@ public class Customer {
         this.email = email;
     }
 
-    public String getTelephone() {
+    public int getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(String telephone) {
+    public void setTelephone(int telephone) {
         this.telephone = telephone;
     }
 }

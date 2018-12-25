@@ -35,7 +35,7 @@ public class GetCustomer {
                 customer.setCity(resultSet.getString(4));
                 customer.setStreet(resultSet.getString(5));
                 customer.setBuilding(resultSet.getInt(6));
-                customer.setTelephone(resultSet.getString(7));
+                customer.setTelephone(resultSet.getInt(7));
                 customer.setEmail(resultSet.getString(8));
                 customers.add(customer);
             }

@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.model.Customer;
@@ -34,7 +36,7 @@ public class ControllerOrderForm {
     private Button docButtonText;
 
     @FXML
-    private DatePicker date;
+    private TextField date;
 
     @FXML
     private Button quantitySubtr;
@@ -174,12 +176,14 @@ public class ControllerOrderForm {
         stage.close();
     }
 
+    private final static String DATE_FORMAT = "[0-9]{2}.[0-9]{2}.[0-9]{4}";
 
     @FXML
     void orderAction() throws Exception {
         if (street.getText().isEmpty() && building.getText().isEmpty() &&
                 appartment.getText().isEmpty() && name.getText().isEmpty() &&
-                surname.getText().isEmpty() && telephone.getText().isEmpty() && email.getText().isEmpty()) {
+                surname.getText().isEmpty() && telephone.getText().isEmpty() && email.getText().isEmpty() &&
+                date.getText().isEmpty() && !(date.getText().matches(DATE_FORMAT))) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
             alert.setHeaderText(null);
@@ -195,7 +199,9 @@ public class ControllerOrderForm {
         } else {
 
             createCustomer();
-            //createInvoice(16);
+            GetCustomer getterCustomer = new GetCustomer();
+            int idCustomer = getterCustomer.getCustomers().size();
+            createInvoice(idCustomer);
 
             Stage stage = (Stage) orderButton.getScene().getWindow();
             stage.hide();
@@ -217,7 +223,7 @@ public class ControllerOrderForm {
         String customerCity = city.getValue();
         String customerStreet = street.getText();
         int customerBuilding = Integer.parseInt(building.getText());
-        String customerPhone = telephone.getText();
+        int customerPhone = Integer.parseInt(telephone.getText());
         String customerEmail = email.getText();
 
         DBWorker worker = new DBWorker();
@@ -242,14 +248,13 @@ public class ControllerOrderForm {
     }
 
     private void createInvoice(int idCustomer) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.mm.yyyy");
         Random random = new Random();
         GetInvoice getterInvoice = new GetInvoice();
         int idInvoice = getterInvoice.getInvoices().size() + 1;
         int idPayment = idInvoice;
 
         int idCourier = random.nextInt(5) + 1;
-        String purchaseTime = date.getValue().format(formatter);
+        String purchaseTime = date.getText();
         String arrivingTime = purchaseTime;
         String status = "не завершено";
 
@@ -311,12 +316,26 @@ public class ControllerOrderForm {
 
     private int sPrice;
 
+    @FXML
+    private Button sBttn;
+
+    @FXML
+    private Button mBttn;
+
+    @FXML
+    private Button lBttn;
 
     @FXML
     private void ssizeAction(){
         pizzaPrice.setText(String.valueOf(sPrice) + ".00 грн.");
         totalPricelbl.setText(String.valueOf(sPrice) + ".00 грн.");
         totalPrice.setText(String.valueOf(sPrice) + ".00 грн.");
+        sBttn.setTextFill(Color.web("#ffffff"));
+        sBttn.setStyle("-fx-background-color: #ce343e; ");
+        mBttn.setTextFill(Color.web("#000000"));
+        mBttn.setStyle("-fx-background-color: #e5e5e5; ");
+        lBttn.setTextFill(Color.web("#000000"));
+        lBttn.setStyle("-fx-background-color: #e5e5e5; ");
     }
 
     @FXML
@@ -325,6 +344,12 @@ public class ControllerOrderForm {
         pizzaPrice.setText(String.valueOf(msize + sPrice) + ".00 грн.");
         totalPricelbl.setText(String.valueOf(msize + sPrice) + ".00 грн.");
         totalPrice.setText(String.valueOf(msize + sPrice) + ".00 грн.");
+        mBttn.setTextFill(Color.web("#ffffff"));
+        mBttn.setStyle("-fx-background-color: #ce343e; ");
+        sBttn.setTextFill(Color.web("#000000"));
+        sBttn.setStyle("-fx-background-color: #e5e5e5; ");
+        lBttn.setTextFill(Color.web("#000000"));
+        lBttn.setStyle("-fx-background-color: #e5e5e5; ");
     }
 
     @FXML
@@ -333,6 +358,12 @@ public class ControllerOrderForm {
         pizzaPrice.setText(String.valueOf(lsize + sPrice) + ".00 грн.");
         totalPricelbl.setText(String.valueOf(lsize + sPrice) + ".00 грн.");
         totalPrice.setText(String.valueOf(lsize + sPrice) + ".00 грн.");
+        lBttn.setTextFill(Color.web("#ffffff"));
+        lBttn.setStyle("-fx-background-color: #ce343e; ");
+        mBttn.setTextFill(Color.web("#000000"));
+        mBttn.setStyle("-fx-background-color: #e5e5e5; ");
+        sBttn.setTextFill(Color.web("#000000"));
+        sBttn.setStyle("-fx-background-color: #e5e5e5; ");
     }
 
 
@@ -351,7 +382,7 @@ public class ControllerOrderForm {
         totalPricelbl.setText(String.valueOf(tempPrice) + ".00 грн.");
         totalPrice.setText(String.valueOf(tempPrice) + ".00 грн.");
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.mm.yyyy");
+
         numberlbl.setText("1");
         quantitylbl.setText("1");
         city.getItems().removeAll(city.getItems());
@@ -360,7 +391,7 @@ public class ControllerOrderForm {
         payment.getItems().removeAll(payment.getItems());
         payment.getItems().addAll("Готівкою кур'єру", "Картою кур'єру");
         payment.setValue("Готівкою кур'єру");
-        date.setValue(LocalDate.now());
+        date.setPromptText("dd.mm.yyyy");
 
     }
 
