@@ -62,14 +62,13 @@ public class Controller {
     @FXML
     private void orderButtonAction() throws Exception{
         Stage stage = (Stage) exitBttn.getScene().getWindow();
-        stage.hide();
+        stage.close();
         URL url = new File("src/main/java/sample/view/pizzaForm.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
         newStage.initStyle(StageStyle.UNDECORATED);
-        newStage.showAndWait();
-        stage.close();
+        newStage.show();
     }
 
     @FXML
@@ -93,15 +92,14 @@ public class Controller {
     @FXML
     private void loginButtonAction() throws Exception{
         Stage stage = (Stage) exitBttn.getScene().getWindow();
-        stage.hide();
+        stage.close();
         URL url = new File("src/main/java/sample/view/loginForm.fxml").toURI().toURL();
         //URL url = new File("src/main/java/sample/view/courierForm.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
         newStage.initStyle(StageStyle.UNDECORATED);
-        newStage.showAndWait();
-        stage.close();
+        newStage.show();
     }
 
     @FXML

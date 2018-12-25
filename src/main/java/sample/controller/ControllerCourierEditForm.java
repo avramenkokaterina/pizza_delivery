@@ -263,14 +263,13 @@ public class ControllerCourierEditForm {
     @FXML
     private void logoutButtonAction() throws Exception {
         Stage stage = (Stage) logoutButton.getScene().getWindow();
-        stage.hide();
+        stage.close();
         URL url = new File("src/main/java/sample/view/sample.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
         newStage.initStyle(StageStyle.UNDECORATED);
-        newStage.showAndWait();
-        stage.close();
+        newStage.show();
     }
 
     @FXML
@@ -327,14 +326,13 @@ public class ControllerCourierEditForm {
     @FXML
     private void closeBttnAction() throws Exception{
         Stage stage = (Stage) closeBttn.getScene().getWindow();
-        stage.hide();
+        stage.close();
         URL url = new File("src/main/java/sample/view/courierForm.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         Stage newStage = new Stage();
         newStage.setScene(new Scene(root));
         newStage.initStyle(StageStyle.UNDECORATED);
-        newStage.showAndWait();
-        stage.close();
+        newStage.show();
     }
 
 }

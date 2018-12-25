@@ -204,14 +204,14 @@ public class ControllerOrderForm {
             createInvoice(idCustomer);
 
             Stage stage = (Stage) orderButton.getScene().getWindow();
-            stage.hide();
+            stage.close();
             URL url = new File("src/main/java/sample/view/orderSuccess.fxml").toURI().toURL();
             Parent root = FXMLLoader.load(url);
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
             newStage.initStyle(StageStyle.UNDECORATED);
-            newStage.showAndWait();
-            stage.close();
+            newStage.show();
+
         }
     }
 
